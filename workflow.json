@@ -1,0 +1,31 @@
+{
+        "name": "Example1",
+        "author": "Foo",
+        "abstract": "Simple workflow with three tasks",
+        "exec_mode": "sync",
+        "ncores": "1",
+        "cube": "http://hostname/1/1",
+        "tasks":
+        [
+                {
+                        "name": "Extract maximum value",
+                        "operator": "oph_reduce",
+                        "arguments": [ "operation=max" ]
+                },
+                {
+                        "name": "Extract minimum value",
+                        "operator": "oph_reduce",
+                        "arguments": [ "operation=min" ]
+                },
+                {
+                        "name": "Evaluate max-min range",
+                        "operator": "oph_intercube",
+                        "arguments": [ "operation=sub" ],
+                        "dependencies":
+                        [
+                                { "task": "Extract maximum value", "type": "single", "argument": "cube" },
+                                { "task": "Extract minimum value", "type": "single", "argument": "cube2" }
+                        ]
+                }
+        ]
+}
