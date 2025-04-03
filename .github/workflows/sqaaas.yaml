@@ -11,7 +11,7 @@ jobs:
       - name: SQAaaS action step
         uses: eosc-synergy/sqaaas-assessment-action@feature/only_criteria_workflow
         with: 
-           criteria_workflow_only: 'True'
+           criteria_workflow_only: 'False'
            explicit_criteria_workflow: '{"criteria_workflow": [{"id": "QC.Sty","tools": [{"docs": "https://flake8.pycqa.org/","docker": {"image": "pipelinecomponents/flake8:0.9.0"},"args": [{"type": "positional", "description": "Path to Python project or file/s", "value": ".", "format": "string", "selectable": true, "repeatable": true},{"type": "optional", "description": "Comma-separated list of files or directories to exclude", "option": "--exclude", "value": "arguments.json", "format": "string", "selectable": true, "repeatable": true}],"reporting": {"validator": "flake8","requirement_level": "REQUIRED"},"name": "flake8","lang": "Python"}]}]}'
             
         
