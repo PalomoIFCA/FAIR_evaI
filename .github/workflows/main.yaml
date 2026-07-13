@@ -1,3 +1,4 @@
+
 # SPDX-FileCopyrightText: Copyright contributors to the Software Quality Assurance as a Service (SQAaaS) project.
 # SPDX-FileContributor: Pablo Orviz <orviz@ifca.unican.es>
 #
@@ -7,3 +8,6 @@ jobs:
   sqaaas_job:
     runs-on: ubuntu-latest
     name: Job that triggers SQAaaS platform branch
+    steps:
+      - name: SQAaaS action step
+        uses: eosc-synergy/sqaaas-assessment-action@main
